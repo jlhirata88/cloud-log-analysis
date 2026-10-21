@@ -1,0 +1,60 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-001",
+      "eventTime": "2026-10-01T12:00:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Success"
+      },
+      "additionalEventData": {
+        "MFAUsed": "Yes"
+      }
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-002",
+      "eventTime": "2026-10-01T12:01:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-003",
+      "eventTime": "2026-10-01T12:02:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": null
+    }
+  ]
+}

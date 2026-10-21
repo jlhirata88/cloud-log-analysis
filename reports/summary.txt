@@ -1,0 +1,42 @@
+CLOUDTRAIL TRIAGE REPORT
+=======================
+{
+  "input_records": 15,
+  "analyzed_events": 15,
+  "duplicate_events": 0,
+  "skipped_records": 0,
+  "findings": 5,
+  "severity_counts": {
+    "High": 4,
+    "Medium": 1
+  }
+}
+
+Findings are review signals, not proof of compromise.
+
+[High] NO_MFA_LOGIN | 2026-10-01T12:03:00Z
+Actor: arn:aws:iam::111122223333:user/demo-analyst | IP: 192.0.2.10
+Evidence: ConsoleLogin = Success; MFAUsed = No
+Next action: Verify the sign-in and enforce appropriate MFA controls.
+
+[High] ROOT_ACTIVITY | 2026-10-01T12:04:00Z
+Actor: arn:aws:iam::111122223333:root | IP: 192.0.2.10
+Evidence: userIdentity.type = Root; review both attempted and completed activity
+Next action: Verify the owner and purpose; use delegated roles for routine work.
+
+[High] LOGGING_CHANGE | 2026-10-01T12:05:00Z
+Actor: arn:aws:iam::111122223333:user/demo-analyst | IP: 192.0.2.10
+Evidence: StopLogging recorded without errorCode
+Next action: Verify change approval and restore logging if unauthorized.
+
+[High] ADMIN_POLICY | 2026-10-01T12:06:00Z
+Actor: arn:aws:iam::111122223333:user/demo-analyst | IP: 192.0.2.10
+Evidence: {"policyArn": "arn:aws:iam::aws:policy/AdministratorAccess", "userName": "demo-analyst"}
+Next action: Review the target and approval; remove excessive permissions.
+
+[Medium] LOGIN_BURST | 2026-10-01T12:12:00Z
+Actor: arn:aws:iam::111122223333:user/demo-analyst | IP: 192.0.2.10
+Evidence: 5 failures within 10 minutes; IDs: synthetic-008, synthetic-009, synthetic-010, synthetic-011, synthetic-012
+Next action: Investigate the account and IP; review subsequent successful logins.
+
+INPUT WARNINGS

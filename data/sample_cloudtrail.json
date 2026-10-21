@@ -1,0 +1,294 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-001",
+      "eventTime": "2026-10-01T12:00:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Success"
+      },
+      "additionalEventData": {
+        "MFAUsed": "Yes"
+      }
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-002",
+      "eventTime": "2026-10-01T12:01:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-003",
+      "eventTime": "2026-10-01T12:02:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-004",
+      "eventTime": "2026-10-01T12:03:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Success"
+      },
+      "additionalEventData": {
+        "MFAUsed": "No"
+      }
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-005",
+      "eventTime": "2026-10-01T12:04:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "Root",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:root"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-006",
+      "eventTime": "2026-10-01T12:05:00Z",
+      "eventSource": "cloudtrail.amazonaws.com",
+      "eventName": "StopLogging",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": {
+        "name": "demo-trail"
+      },
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-007",
+      "eventTime": "2026-10-01T12:06:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "AttachUserPolicy",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": {
+        "userName": "demo-analyst",
+        "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      },
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-008",
+      "eventTime": "2026-10-01T12:08:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Failure"
+      },
+      "errorCode": "FailedAuthentication"
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-009",
+      "eventTime": "2026-10-01T12:09:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Failure"
+      },
+      "errorCode": "FailedAuthentication"
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-010",
+      "eventTime": "2026-10-01T12:10:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Failure"
+      },
+      "errorCode": "FailedAuthentication"
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-011",
+      "eventTime": "2026-10-01T12:11:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Failure"
+      },
+      "errorCode": "FailedAuthentication"
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-012",
+      "eventTime": "2026-10-01T12:12:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Failure"
+      },
+      "errorCode": "FailedAuthentication"
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-013",
+      "eventTime": "2026-10-01T12:13:00Z",
+      "eventSource": "cloudtrail.amazonaws.com",
+      "eventName": "StopLogging",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied"
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-014",
+      "eventTime": "2026-10-01T12:14:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "AttachRolePolicy",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": {
+        "roleName": "reader",
+        "policyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      },
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.09",
+      "eventID": "synthetic-015",
+      "eventTime": "2026-10-01T12:15:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "userIdentity": {
+        "type": "IAMUser",
+        "accountId": "111122223333",
+        "arn": "arn:aws:iam::111122223333:user/demo-analyst",
+        "userName": "demo-analyst"
+      },
+      "sourceIPAddress": "192.0.2.10",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Success"
+      }
+    }
+  ]
+}
