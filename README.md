@@ -96,6 +96,14 @@ Processing loads the supplied records into memory to sort and correlate across f
 
 All included activity is fabricated. Account IDs, identities, and documentation IP addresses are demonstration values. Keep real logs in `private-data/` and outputs in `local-reports/` (both ignored by Git); review for sensitive data before publishing anything. CSV output guards against spreadsheet formula interpretation of untrusted fields.
 
+## Pipeline security
+
+The GitHub Actions workflow in `.github/workflows/python-tests.yml` runs on pull requests and pushes to `main`. It uses read-only `contents: read` permissions, pins third-party actions to full commit SHAs, and runs unit tests on Python 3.10 and 3.12. It also exercises both the suspicious-event sample and the clean baseline.
+
+**Why this matters:** automated tests help catch regressions before merging; limited permissions reduce the impact of a compromised job; pinned actions prevent an upstream tag from silently changing the workflow's action code. These measures reduce risk but do not replace code review, vulnerability scanning, or production monitoring.
+
+**Repository setting to enable manually:** GitHub → Settings → Rules → Rulesets (or Branches → Branch protection) → protect `main`, require a pull request and require both Python test checks to pass before merging. Select the exact check names shown in the Actions tab. This setting is not enforced by the workflow itself. Availability and enforcement depend on repository plan and visibility.
+
 ## Continuous integration
 
 GitHub Actions runs the standard-library unittest suite on pushes and pull requests to `main`, using Python 3.10 and 3.12. Check the **Actions** tab for results. A green badge reflects the most recent applicable workflow result; it does not prove detection accuracy or production readiness.
