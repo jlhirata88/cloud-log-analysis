@@ -87,7 +87,7 @@ def analyze(records, threshold=5, window_minutes=10):
         if (source == 'iam.amazonaws.com' and name in ('AttachUserPolicy', 'AttachRolePolicy', 'AttachGroupPolicy') and successful
                 and obj(event.get('requestParameters')).get('policyArn') == 'arn:aws:iam::aws:policy/AdministratorAccess'):
             add('ADMIN_POLICY', event, json.dumps(obj(event.get('requestParameters')), sort_keys=True))
-        if source == 'signin.amazonaws.com' and name == 'ConsoleLogin' and (response.get('ConsoleLogin') == 'Failure' or event.get('errorCode')):
+        if source == 'signin.amazonaws.com' and name == 'ConsoleLogin' and (response.get('ConsoleLogin') == 'Failure' or event.get('errorCode') in ('FailedAuthentication', 'InvalidPassword', 'InvalidUserName')):
             account = identity.get('accountId') or event.get('recipientAccountId')
             actor = identity.get('arn') or identity.get('principalId') or identity.get('userName')
             ip = event.get('sourceIPAddress')
