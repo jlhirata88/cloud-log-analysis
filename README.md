@@ -117,6 +117,6 @@ Run `py -m unittest discover -s tests -v`. The suite covers unrelated login erro
 - [AWS console sign-in event examples](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html)
 - [IAM and STS CloudTrail integration](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)
 
-## Project credit
+## Project Development
 
-Prepared for Justin Hirata's cloud security portfolio with AI-assisted implementation. Review the walkthrough, run the project, and make your own documented changes before presenting it as independent work. Describe it as a local simulation; do not claim production deployment or real incident response.
+This project was developed as part of my hands-on learning in cloud security, Python programming, and security automation. It demonstrates how AWS CloudTrail logs can be analyzed to identify suspicious activity, generate security findings, and support incident investigations.
