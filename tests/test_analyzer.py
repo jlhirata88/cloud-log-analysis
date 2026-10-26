@@ -92,6 +92,19 @@ class AnalyzerTests(unittest.TestCase):
             self.assertEqual(fail.returncode,2)
             self.assertIn('Error:',fail.stderr)
 
+    def test_unrelated_login_error_does_not_trigger_failure_burst(self):
+        failures = copy.deepcopy(self.records[7:12])
+        for event in failures:
+            event['responseElements'] = None
+            event['errorCode'] = 'AccessDenied'
+        self.assertEqual(analyze(failures)['findings'], [])
+
+    def test_explicit_failed_login_without_error_code(self):
+        failures = copy.deepcopy(self.records[7:12])
+        for event in failures:
+            event.pop('errorCode', None)
+        self.assertEqual([f['rule_id'] for f in analyze(failures)['findings']], ['LOGIN_BURST'])
+
     def test_invalid_threshold(self):
         with self.assertRaises(ValueError): analyze([],threshold=0)
 
